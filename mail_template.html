@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+  <body>
+    <pre>
+今天的交易记录:
+
+{% for item in bills -%}
+{{ item.time_str }}
+{{ item.place }}{% if item.info|length > 0 %} | {% endif %}{{ item.info }}
+金额: {{ "%8.2f"|format(item.amount) }}
+
+{% endfor -%}
+
+--
+余额: {{ "%8.2f"|format(balance) }}
+--
+{{ time }}
+    </pre>
+  </body>
+</html>

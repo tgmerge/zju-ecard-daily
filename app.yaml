@@ -1,0 +1,21 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+instance_class: B1
+basic_scaling:
+  max_instances: 1
+  idle_timeout: 2m
+
+handlers:
+- url: /tasks/summary
+  script: cloud.app
+- url: /.*
+  script: cloud.app
+
+skip_files:
+- ^venv/.*$
+- ^\.git/.*$
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- \.gitignore
