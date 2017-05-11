@@ -1,5 +1,0 @@
-cron:
-- description: daily summary job
-  url: /tasks/summary
-  schedule: every day 00:00
-  timezone: Asia/Shanghai
